@@ -24,13 +24,13 @@ type Handler struct {
 	vmServerClients map[Type]*grpc.ClientConn
 }
 
-func (r *Handler) Handle(task *task.Task, vmtype Type, code string, expParam string) ([]byte, error) {
+func (r *Handler) Handle(task *task.Task, vmtype Type, code string, expParams []string) ([]byte, error) {
 	conn, ok := r.vmServerClients[vmtype]
 	if !ok {
 		return nil, errors.New("unsupported vm type")
 	}
 
-	if err := create(context.Background(), conn, task.ProjectID, code, expParam); err != nil {
+	if err := create(context.Background(), conn, task.ProjectID, code, expParams); err != nil {
 		return nil, errors.Wrap(err, "failed to create vm instance")
 	}
 	slog.Debug("create vm instance success", "vm_type", vmtype)

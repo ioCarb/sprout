@@ -10,7 +10,7 @@ service VmRuntime {
 message CreateRequest {
     uint64 projectID = 1;
     string content = 2;
-    string expParam = 3;
+    repeated string expParams = 3;
 }
 
 message CreateResponse {
