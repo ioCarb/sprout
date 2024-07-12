@@ -16,7 +16,7 @@ The diagram represents the main components of the software and how they interact
 - P2P network: In W3bstream, all sequencers and provers interact with each other over the P2P network, including dispatching, receiving, and reporting task status. To participate the processing of a project, a node needs to join the project topic and then process the information related to the project.
 - IPFS: Project config data is stored on IPFS. Users who want to publish a new project can use [ioctl](https://docs.iotex.io/the-iotex-stack/reference/ioctl-cli-reference) to push the project config file to IPFS.
 - Chain contract: Projects and provers are registered in IoTeX contracts. They are publicly available and open to all to register.
-- ZK runtime: Three ZK runtimes are supported, including Halo2, ZkWasm, and Risc0. A project could specify the runtime to be used in the project.
+- ZK runtime: Three ZK runtimes are supported, including Halo2, ZkWasm, ZoKrates and Risc0. A project could specify the runtime to be used in the project.
 
 ## Docker images
 

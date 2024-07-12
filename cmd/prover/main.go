@@ -47,10 +47,11 @@ func main() {
 
 	vmHandler, err := vm.NewHandler(
 		map[vm.Type]string{
-			vm.Risc0:  conf.Risc0ServerEndpoint,
-			vm.Halo2:  conf.Halo2ServerEndpoint,
-			vm.ZKwasm: conf.ZKWasmServerEndpoint,
-			vm.Wasm:   conf.WasmServerEndpoint,
+			vm.Risc0:    conf.Risc0ServerEndpoint,
+			vm.Halo2:    conf.Halo2ServerEndpoint,
+			vm.ZKwasm:   conf.ZKWasmServerEndpoint,
+			vm.Wasm:     conf.WasmServerEndpoint,
+			vm.Zokrates: conf.ZokratesServerEndpoint,
 		},
 	)
 	if err != nil {

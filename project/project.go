@@ -67,7 +67,7 @@ func (c *Config) validate() error {
 	switch c.VMType {
 	default:
 		return errUnsupportedVMType
-	case vm.Halo2, vm.Wasm, vm.Risc0, vm.ZKwasm:
+	case vm.Halo2, vm.Wasm, vm.Risc0, vm.ZKwasm, vm.Zokrates:
 		return nil
 	}
 }
