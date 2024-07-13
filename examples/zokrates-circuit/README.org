@@ -38,3 +38,9 @@ change the project-ids depending on what you chose above
   ioctl ws message send --project-id 20001 --project-version "0.1" --data "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 510"
 #+end_src
 and look at the output of the docker log to see the generated proof
+
+* verify proof locally
+the sprout ZoKrates-prover will generate a witness and generate a proof in =json=. To verify the proof you can write it to =proof.json= and do:
+#+begin_src bash
+  ./zokrates verify
+#+end_src
