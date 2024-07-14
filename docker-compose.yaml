@@ -10,7 +10,9 @@ services:
       - "8000:8000"
 
   sequencer:
-    image: ghcr.io/machinefi/sequencer:v0.12.1
+    # image: ghcr.io/machinefi/sequencer:v0.12.1
+    build:
+      dockerfile: ./sequencer.Dockerfile
     depends_on:
       - "postgres"
       - "coordinator"
