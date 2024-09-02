@@ -10,9 +10,7 @@ services:
       - "8000:8000"
 
   sequencer:
-    # image: ghcr.io/machinefi/sequencer:v0.12.1
-    build:
-      dockerfile: ./sequencer.Dockerfile
+    image: ghcr.io/machinefi/sequencer:v0.12.1
     depends_on:
       - "postgres"
       - "coordinator"
@@ -27,6 +25,7 @@ services:
     # image: ghcr.io/machinefi/coordinator:v0.12.1
     build:
       dockerfile: ./coordinator.Dockerfile
+      context: .
     depends_on:
       - "postgres"
       - "bootnode"
@@ -48,6 +47,7 @@ services:
     # image: ghcr.io/machinefi/prover:v0.12.1
     build:
       dockerfile: ./prover.Dockerfile
+      context: .
     depends_on:
       - "risc0"
       - "halo2"
